@@ -66,14 +66,19 @@ public class phone
 				break;
 
 				case 2:
+				if(mlist.size()==0)
+					System.out.println("*** No new Missed Calls ***");
+					
 				for(int i = 0; i < mlist.size(); i++)
 				{	
 					System.out.println("***Missed Calls***");
 					MissedCall missedCaller = mlist.get(i);
 					System.out.println(missedCaller);
 					if(i == mlist.size() -1 ){
-					System.out.println("***Last record reached next record not available!***");
-				}
+						System.out.println("***Last record reached next record not available!***");
+// 						break after last record is displayed
+						break;
+					}
 					System.out.println("\n1) Display next\n2) Display next and delete current\n");
 					int ch1 = sc.nextInt();
 					switch(ch1)
